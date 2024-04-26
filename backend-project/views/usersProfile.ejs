@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uerprofile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full min-h-screen bg-zinc-900 px-10 py-10 ">
+        <a class="text-blue-900 " href="/">Go back</a>
+        <h1 class="mb-5 text-white mt-5">Created Profiles</h1>
+        <div class="w-full text-white  bg-zinc-900 flex gap-3 flex-wrap">
+            
+                <!-- <div class="images w-64 h-64 border-1">
+                    <img class="" src="" alt="">
+                </div>
+                <h1>username</h1>
+                <h3>user email</h3>
+                <div class="flex justify-between items-center mt-5">
+                    <a href="">Edit profile</a>
+                    <a href="">Delete</a>
+                </div> -->
+
+                <% if(data.length > 0){ %>
+                    <% data.forEach((items)=>{ %>
+                    <div class="max-w-72  text-zinc-900 bg-zinc-500 px-5 py-5 ">
+                        <div class="images w-64 h-64 border-1 rounded">
+                            <img class="w-64 max-h-56" src="<%= items.image %>" alt="">
+                        </div>
+                        <h1 class="text-xl font-semibold tracking-tighter"><%= items.name %></h1>
+                        <h3 class="font-semibold tracking-tighter"><%= items.email %></h3>
+                        <div class="flex justify-between items-center mt-5">
+                            <a href="/edit/<%= items._id %>" class="font-bold">Edit profile</a>
+                            <a href="/delete/<%= items._id %>" class="text-red-900 font-bold">Delete</a>
+                        </div>
+                    </div>
+                    <% })%>
+
+                <%} else{ %>
+                    <h1>No user Profiles</h1>
+
+                <%}%>
+               
+            </div>
+       
+        </div>
+
+    </div>
+    
+</body>
+</html>

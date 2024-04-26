@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Userform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 px-10 py-10 text-white">
+        <div class="flex gap-3 mb-5 w-1/2">
+            <h1 class="">Edit User</h1>
+        </div>
+        <div class="w-full text-white px-5 py-5">
+            <form action="/update/<%= user._id%>" method="post" class="flex gap-3 text-white">
+                <input class="p-2 rounded border-none bg-zinc-600" type="text" name="name" value="<%=user.name%>">
+                <input class="p-2 rounded border-none bg-zinc-600" type="text" name="email" value="<%=user.email%>" >
+                <input class="p-2 rounded border-none bg-zinc-600" type="text"  name="image" value="<%=user.image%>" >
+                <input class="p-2 rounded border-none bg-yellow-600" type="submit" value="Update user">
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+</html>
